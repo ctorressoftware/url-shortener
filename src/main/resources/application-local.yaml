@@ -10,7 +10,6 @@ spring:
         show_sql: false
         format_sql: false
   liquibase:
-    # url: jdbc:postgresql://localhost:5432/${DATABASE_NAME}
     user: ${DATABASE_USER}
     password: ${DATABASE_PASSWORD}
     enabled: true
