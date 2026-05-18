@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: "migrations/20260517-2115-create-table-short-url.yaml"
+      relativeToChangelogFile: true
