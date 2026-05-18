@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/short-urls")
-public class ShortenUrlController {
+public class ShortUrlController {
 
     private final BuildShortenedUrlUseCase buildShortenedUrlService;
 
-    public ShortenUrlController(BuildShortenedUrlUseCase buildShortenedUrlService) {
+    public ShortUrlController(BuildShortenedUrlUseCase buildShortenedUrlService) {
         this.buildShortenedUrlService = buildShortenedUrlService;
     }
 
