@@ -11,4 +11,5 @@ import java.util.UUID;
 public interface SpringDataShortUrlRepository
         extends JpaRepository<ShortUrlEntity, UUID> {
     Optional<ShortUrlEntity> findByOriginalUrl(String originalUrl);
+    Optional<ShortUrlEntity> findByShortCode(String shortCode);
 }

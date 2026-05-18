@@ -29,6 +29,12 @@ public class JpaShortUrlRepositoryAdapter implements ShortUrlRepository {
         return url.map(this::toDomain);
     }
 
+    @Override
+    public Optional<ShortUrl> findByShortCode(String shortCode) {
+        Optional<ShortUrlEntity> url = repository.findByShortCode(shortCode);
+        return url.map(this::toDomain);
+    }
+
     private ShortUrlEntity toEntity(ShortUrl shortUrl) {
         ShortUrlEntity entity = new ShortUrlEntity();
         entity.setId(shortUrl.getId());
