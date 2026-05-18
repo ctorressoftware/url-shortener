@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20260517-2115-create-table-short-url
+      author: Carlos Torres
+      preConditions:
+        - onFail: MARK_RAN
+        - onError: HALT
+        - not:
+            tableExists:
+              tableName: short_url
+      changes:
+        - createTable:
+            tableName: short_url
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pk_short_url
+                    nullable: false
+
+              - column:
+                  name: original_url
+                  type: text
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: short_code
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: active
+                  type: boolean
+                  defaultValueBoolean: true
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: created_at
+                  type: timestamptz
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: updated_at
+                  type: timestamptz
+
+              - column:
+                  name: expires_at
+                  type: timestamptz
+
+        - addUniqueConstraint:
+            tableName: short_url
+            columnNames: original_url
+            constraintName: uq_short_url_original_url
+
+        - addUniqueConstraint:
+            tableName: short_url
+            columnNames: short_code
+            constraintName: uq_short_url_short_code
