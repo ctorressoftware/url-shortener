@@ -1,0 +1,74 @@
+# Spring Initializr
+HELP.md
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# STS / Eclipse
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Env / local config
+.env*
+!.env.sample
+*.local
+application-local.properties
+application-local.yml
+application-*.local.properties
+application-*.local.yml
+
+# Test / coverage
+*.exec
+coverage/
+jacoco.exec
+build/reports/jacoco/
+build/test-results/
+
+# JVM crash / profiling
+hs_err_pid*
+replay_pid*
+*.jfr
+
+# Native / GraalVM
+*.build_artifacts.txt
+native-image*.args
+
+# Docker / local volumes
+docker-data/
+postgres-data/
+pgdata/
+
+# Temp
+*.swp
+*.swo
+*~
+.tmp/
+temp/
+
+# Node, if added later
+node_modules/
